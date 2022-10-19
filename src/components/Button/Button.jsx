@@ -1,7 +1,7 @@
-export const Button = ({ children, onClick, type }) => {
+export const Button = ({ children, onClick, type, size }) => {
   if (type === 'primary')
     return (
-      <button className='bg-black text-white p-4 rounded-full' onClick={onClick}>
+      <button className={`bg-black text-white ${size === "small"? "py-2 px-4 text-sm":"p-4"} rounded-full`} onClick={onClick}>
         {children}
       </button>
     );

@@ -111,7 +111,6 @@ export default function Home() {
           <span className='underline'>Terms of Use</span>
         </p>
       </div>
-
     </div>
   );
 }

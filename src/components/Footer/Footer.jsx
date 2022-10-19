@@ -8,7 +8,7 @@ export const Footer = () => {
         <img src='/icons/twitter.svg' alt='twitter icon' />
         <img width={45} src='/icons/discord.svg' alt='discord icon' />
       </div>
-      <div className='flex items-center justify-center space-x-5'>
+      <div className='flex flex-col md:flex-row items-center justify-center space-x-5'>
         <Link href={"/"}>
           <a>Home</a>
         </Link>
@@ -24,7 +24,7 @@ export const Footer = () => {
       </div>
 
       <div>
-        <p className='text-sm'>Copyright © 2022 NiftyKit. All rights reserved.</p>
+        <p className='text-sm'>Copyright © 2022 Riverdao. All rights reserved.</p>
       </div>
     </footer>
   );
