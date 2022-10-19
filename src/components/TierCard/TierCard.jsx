@@ -1,27 +1,37 @@
+import { Button } from '../Button';
+
 /* eslint-disable @next/next/no-img-element */
-export const TierCard = () => {
+export const TierCard = ({ imgSrc, tierName, amount, points }) => {
   return (
-    <div className='flex flex-col p-5 drop-shadow-2xl font-chivo'>
+    <div className='flex flex-col shadow-2xl font-chivo justify-between rounded-[1.45rem] h-[670px]'>
       <div>
         <div>
           {/* Image */}
-          <img src='/images/tier-1.png' alt='tier 1 image' />
+          <img
+            className='rounded-t-[1.45rem]'
+            src={imgSrc}
+            alt={`${tierName} image`}
+          />
         </div>
-        <div>
+        <div className='p-5'>
           {/* Content */}
-          <div className='flex items-center gap-x-2'>
-            <h2 className='text-[22px] font-bold'>Tier Name.</h2>
-            <p className='text-[20px] font-bold text-[#9E9e9e]'>100 $MATIC</p>
+          <div className='flex items-center space-x-6 mb-4'>
+            <h2 className='text-[20px] font-bold'>{tierName}</h2>
+            <p className='text-[18px] font-bold text-[#9E9e9e]'>
+              {amount} $MATIC
+            </p>
           </div>
           <ul className='list-disc text-left pl-8'>
-            <li>2-Vote Card</li>
-            <li>Receive 5.000 $RVER airdrop</li>
-            <li>Join River Dao Discord Channel</li>
-            <li>Unlock special campaigns</li>
+            {points.map((point) => (
+              <li key={point.id}>{point.listItem}</li>
+            ))}
           </ul>
         </div>
       </div>
-      <div>{/* Buttons */}</div>
+      <div className='flex flex-col space-y-3 mb-5 p-5'>
+        <Button type='primary'>SIGN UP</Button>
+        <Button>LEARN MORE</Button>
+      </div>
     </div>
   );
 };
