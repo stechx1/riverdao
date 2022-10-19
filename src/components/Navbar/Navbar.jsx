@@ -69,7 +69,7 @@ export const Navbar = () => {
         </div>
       </div>
       {/* Mobile */}
-      <div className={`${openMobileNav ? '' : 'hidden'}`}>
+      <div className={`${openMobileNav ? 'block' : 'hidden'} md:hidden lg:hidden xl:hidden`}>
         <ul class='flex flex-col items-center text-left space-y-2'>
           <li>
             <Link href='/'>
