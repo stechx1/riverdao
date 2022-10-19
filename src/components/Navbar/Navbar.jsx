@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '../Button';
 
 /* eslint-disable @next/next/no-img-element */
 export const Navbar = () => {
+  const [openMobileNav, setOpenMobileNav] = useState(false);
   return (
     <nav class='bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow-sm'>
       <div class='container flex flex-wrap justify-between items-center mx-auto'>
@@ -16,6 +18,7 @@ export const Navbar = () => {
           </a>
         </Link>
         <button
+          onClick={() => setOpenMobileNav(prev => !prev)}
           data-collapse-toggle='navbar-default'
           type='button'
           class='inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 '
@@ -37,6 +40,7 @@ export const Navbar = () => {
             ></path>
           </svg>
         </button>
+
         <div class='hidden w-full md:block md:w-auto' id='navbar-default'>
           <ul class='flex flex-col items-center md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white'>
             <li className='flex space-x-3'>
@@ -44,7 +48,7 @@ export const Navbar = () => {
                 <p className='text-[12px]'>ETH Gas</p>
                 <p className='text-[13px]'>35.59 Gwei</p>
               </div>
-              <img src="/icons/gas.svg" alt="gas icon" />
+              <img src='/icons/gas.svg' alt='gas icon' />
             </li>
             <li>
               <Link href='/'>
@@ -63,6 +67,32 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
+      </div>
+      {/* Mobile */}
+      <div className={`${openMobileNav ? '' : 'hidden'}`}>
+        <ul class='flex flex-col items-center text-left space-y-2'>
+          <li>
+            <Link href='/'>
+              <a aria-current='page'>Log In</a>
+            </Link>
+          </li>
+          <li>
+            <Button type='primary' size='small'>
+              SIGN UP
+            </Button>
+          </li>
+          <li>
+            <Button type='primary' size='small'>
+              Connect Wallet
+            </Button>
+          </li>
+          <li className='flex space-x-3'>
+            <div className='justify-left'>
+              <p className='text-[13px]'>35.59 Gwei</p>
+            </div>
+            <img src='/icons/gas.svg' alt='gas icon' />
+          </li>
+        </ul>
       </div>
     </nav>
   );
