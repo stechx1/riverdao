@@ -15,7 +15,7 @@ export const TierCard = ({ imgSrc, tierName, amount, points }) => {
         </div>
         <div className='p-5'>
           {/* Content */}
-          <div className='flex items-center space-x-6 mb-4'>
+          <div className='flex items-center space-x-6 mb-4 text-left'>
             <h2 className='text-[20px] font-bold'>{tierName}</h2>
             <p className='text-[18px] font-bold text-[#9E9e9e]'>
               {amount} $MATIC

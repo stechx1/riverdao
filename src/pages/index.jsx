@@ -82,7 +82,7 @@ export default function Home() {
         </p>
       </div>
       {/* Grid */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 my-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 my-10'>
         {/* imgSrc, tierName, amount, points */}
         <TierCard
           imgSrc={'/images/tier-1.png'}
