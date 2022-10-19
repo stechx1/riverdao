@@ -1,3 +1,5 @@
+import { TierCard } from '../components';
+
 export default function Home() {
   return (
     <div className='container mx-auto text-center my-12'>
@@ -14,7 +16,9 @@ export default function Home() {
         </p>
       </div>
       {/* Grid */}
-      <div></div>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6'>
+        <TierCard />
+      </div>
     </div>
   );
 }
